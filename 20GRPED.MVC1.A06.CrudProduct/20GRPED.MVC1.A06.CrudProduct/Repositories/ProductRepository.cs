@@ -13,7 +13,7 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Repositories
                 new ProductModel
                 {
                     Id = 1,
-                    Nome = "SampleProduct1"
+                    Name = "SampleProduct1"
                 }
             };
 
@@ -38,7 +38,7 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Repositories
 
         public List<ProductModel> SearchByName(string name)
         {
-            var results = Products.Where(x => x.Nome.Contains(
+            var results = Products.Where(x => x.Name.Contains(
                 name, StringComparison.OrdinalIgnoreCase));
 
             //var results2 = new List<ProductModel>();
@@ -63,7 +63,7 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Repositories
         {
             var oldProductModel = GetById(updatedProductModel.Id);
 
-            oldProductModel.Nome = updatedProductModel.Nome;
+            oldProductModel.Name = updatedProductModel.Name;
         }
 
         public void Remove(int id)

@@ -8,6 +8,6 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Models
     public class ProductModel
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public string Name { get; set; }
     }
 }
