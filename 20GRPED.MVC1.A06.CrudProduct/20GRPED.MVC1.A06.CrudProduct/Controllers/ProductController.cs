@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _20GRPED.MVC1.A06.CrudProduct.Models;
+using _20GRPED.MVC1.A06.CrudProduct.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,10 +11,17 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Controllers
 {
     public class ProductController : Controller
     {
+        private readonly ProductRepository _productRepository;
+
+        public ProductController()
+        {
+            _productRepository = new ProductRepository();
+        }
+
         // GET: Product
         public ActionResult Index()
         {
-            return View();
+            return View(_productRepository.GetAll());
         }
 
         // GET: Product/Details/5
