@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace _20GRPED.MVC1.A06.CrudProduct.Repositories
 {
-    public class ProductRepository
+    public class ProductListInMemoryRepository : IProductRepository
     {
         public static List<ProductModel> Products { get; set; }
             = new List<ProductModel>

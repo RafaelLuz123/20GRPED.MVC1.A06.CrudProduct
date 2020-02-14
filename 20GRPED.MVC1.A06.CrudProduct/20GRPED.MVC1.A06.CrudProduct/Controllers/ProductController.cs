@@ -11,11 +11,12 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly ProductRepository _productRepository;
+        private readonly IProductRepository _productRepository;
 
-        public ProductController()
+        public ProductController(
+            IProductRepository productRepository)
         {
-            _productRepository = new ProductRepository();
+            _productRepository = productRepository;
         }
 
         // GET: Product
