@@ -59,17 +59,19 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Controllers
         // GET: Product/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var product = _productRepository.GetById(id);
+            return View(product);
         }
 
         // POST: Product/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(ProductModel updatedProductModel)
         {
             try
             {
                 // TODO: Add update logic here
+                _productRepository.Update(updatedProductModel);
 
                 return RedirectToAction(nameof(Index));
             }

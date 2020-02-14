@@ -40,5 +40,12 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Repositories
         {
             Products.Add(newProductModel);
         }
+
+        public void Update(ProductModel updatedProductModel)
+        {
+            var oldProductModel = GetById(updatedProductModel.Id);
+
+            oldProductModel.Nome = updatedProductModel.Nome;
+        }
     }
 }
