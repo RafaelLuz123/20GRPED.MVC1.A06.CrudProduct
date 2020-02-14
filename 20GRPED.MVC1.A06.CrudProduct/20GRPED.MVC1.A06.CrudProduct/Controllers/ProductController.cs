@@ -84,17 +84,19 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Controllers
         // GET: Product/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var product = _productRepository.GetById(id);
+            return View(product);
         }
 
         // POST: Product/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(ProductModel productModel)
         {
             try
             {
                 // TODO: Add delete logic here
+                _productRepository.Remove(productModel.Id);
 
                 return RedirectToAction(nameof(Index));
             }

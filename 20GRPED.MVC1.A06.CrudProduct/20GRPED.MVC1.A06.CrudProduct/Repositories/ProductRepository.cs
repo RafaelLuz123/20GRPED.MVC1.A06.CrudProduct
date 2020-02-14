@@ -47,5 +47,12 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Repositories
 
             oldProductModel.Nome = updatedProductModel.Nome;
         }
+
+        public void Remove(int id)
+        {
+            var productToRemove = GetById(id);
+
+            Products.Remove(productToRemove);
+        }
     }
 }
