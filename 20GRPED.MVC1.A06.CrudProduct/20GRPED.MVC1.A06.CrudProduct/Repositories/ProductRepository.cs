@@ -1,5 +1,7 @@
 ﻿using _20GRPED.MVC1.A06.CrudProduct.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace _20GRPED.MVC1.A06.CrudProduct.Repositories
 {
@@ -18,6 +20,20 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Repositories
         public List<ProductModel> GetAll()
         {
             return Products;
+        }
+
+        public ProductModel GetById(int id)
+        {
+            var product = Products.FirstOrDefault(x => x.Id == id);
+
+            //foreach (var item in Products)
+            //{
+            //    if (item.Id == id)
+            //        return item;
+            //}
+            //return null;
+
+            return product;
         }
     }
 }

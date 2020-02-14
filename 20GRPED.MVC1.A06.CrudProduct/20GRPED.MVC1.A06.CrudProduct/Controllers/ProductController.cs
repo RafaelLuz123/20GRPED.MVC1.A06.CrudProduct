@@ -27,7 +27,9 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Controllers
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var product = _productRepository.GetById(id);
+
+            return View(product);
         }
 
         // GET: Product/Create
