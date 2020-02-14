@@ -36,6 +36,24 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Repositories
             return product;
         }
 
+        public List<ProductModel> SearchByName(string name)
+        {
+            var results = Products.Where(x => x.Nome.Contains(
+                name, StringComparison.OrdinalIgnoreCase));
+
+            //var results2 = new List<ProductModel>();
+            //foreach (var item in Products)
+            //{
+            //    if (item.Nome.Contains(name, StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        results2.Add(item);
+            //    }
+            //}
+            //return results2;
+
+            return results.ToList();
+        }
+
         public void Add(ProductModel newProductModel)
         {
             Products.Add(newProductModel);

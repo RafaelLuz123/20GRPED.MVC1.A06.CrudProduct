@@ -24,6 +24,11 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Controllers
             return View(_productRepository.GetAll());
         }
 
+        public ActionResult SearchByName(string name)
+        {
+            return View("Index", _productRepository.SearchByName(name));
+        }
+
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
