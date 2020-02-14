@@ -44,7 +44,7 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Repositories
             //var results2 = new List<ProductModel>();
             //foreach (var item in Products)
             //{
-            //    if (item.Nome.Contains(name, StringComparison.OrdinalIgnoreCase))
+            //    if (item.Name.Contains(name, StringComparison.OrdinalIgnoreCase))
             //    {
             //        results2.Add(item);
             //    }
