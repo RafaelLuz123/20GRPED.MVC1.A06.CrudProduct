@@ -35,5 +35,10 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Repositories
 
             return product;
         }
+
+        public void Add(ProductModel newProductModel)
+        {
+            Products.Add(newProductModel);
+        }
     }
 }

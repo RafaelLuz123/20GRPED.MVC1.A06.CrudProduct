@@ -41,11 +41,12 @@ namespace _20GRPED.MVC1.A06.CrudProduct.Controllers
         // POST: Product/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(ProductModel newProductModel)
         {
             try
             {
                 // TODO: Add insert logic here
+                _productRepository.Add(newProductModel);
 
                 return RedirectToAction(nameof(Index));
             }
